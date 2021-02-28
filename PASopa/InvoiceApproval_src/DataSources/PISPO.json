@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "5d0d37eb-a62c-4eb7-a5e5-f08ea3df5ef9",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "PISPO",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]

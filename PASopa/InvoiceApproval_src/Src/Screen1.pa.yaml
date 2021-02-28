@@ -1,0 +1,244 @@
+Screen1 As screen:
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+
+    DataTable2 As dataTable.datatable:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        HeadingFill: =RGBA(100, 118, 132, 1)
+        HeadingSize: =21
+        Height: =540
+        HoverFill: =RGBA(205, 209, 213, .2)
+        Items: =Filter(Expenses, "Approved" in 'Approval status')
+        PrimaryColor1: =RGBA(100, 118, 132, 1)
+        PrimaryColor2: =RGBA(32, 54, 71, 1)
+        PrimaryColor3: =RGBA(205, 209, 213, 1)
+        SelectedFill: =RGBA(100, 118, 132, .2)
+        Size: =21
+        Width: =640
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+        "'Expense Name_Column2' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Expense Name"
+            FieldName: ="cr946_expense"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.'Expense Name'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'Created On_Column2' As dataTableColumn.dateTimeColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Created On"
+            FieldName: ="createdon"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =Text(ThisItem.'Created On',DateTimeFormat.LongDateTime)
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        "'Expense Period_Column2' As dataTableColumn.dateTimeColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Expense Period"
+            FieldName: ="cr946_expenseperiod"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =Text(ThisItem.'Expense Period',DateTimeFormat.LongDateTime)
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        "'Expense Total Amount_Column2' As dataTableColumn.numberColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Expense Total Amount"
+            FieldName: ="cr946_expensetotalamount"
+            FieldVariantName: ="numberColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.'Expense Total Amount'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        "'Expense Description_Column2' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Expense Description"
+            FieldName: ="cr946_expensedescription"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.'Expense Description'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        "'Approval status_Column2' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Approval status"
+            FieldName: ="new_status"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =ThisItem.'Approval status'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        "'Finance Controller_Column2' As dataTableColumn.emailColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Finance Controller"
+            FieldName: ="cr946_financecontroller"
+            FieldVariantName: ="emailColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =ThisItem.'Finance Controller'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        "'Report to_Column2' As dataTableColumn.textualColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Report to"
+            FieldName: ="new_reportto"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.'Report to'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        "'Report To Email_Column2' As dataTableColumn.emailColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Report To Email"
+            FieldName: ="cr946_reporttoemail"
+            FieldVariantName: ="emailColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.'Report To Email'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        "'Owner Email_Column2' As dataTableColumn.emailColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Owner Email"
+            FieldName: ="cr946_owneremail"
+            FieldVariantName: ="emailColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.'Owner Email'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Items: =Expenses
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(168, Self.Height - 60)
+        Y: =561
+        ZIndex: =1
+
+        Title2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Expense Name'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =16
+            ZIndex: =1
+
+        Subtitle2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: |-
+                ="Total Amount: " & ThisItem.'Expense Total Amount'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Title2.Y + Title2.Height + 2
+            ZIndex: =2
+
+        Body1 As label:
+            Height: =Self.Size * 4
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.'Expense Description'
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - 104
+            X: =32
+            Y: =Subtitle2.Y + Subtitle2.Height + 4
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(varSelectedItem, ThisItem);
+                Navigate(Screen3);
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Fill: =RGBA(32, 54, 71, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+

@@ -1,0 +1,9 @@
+[
+  {
+    "AddinConnectorId": "508931d2-933d-4b3b-a5fd-e55f52c0200a",
+    "AddinId": "6d1f157d-95bf-406d-b65d-cfd3240f724e",
+    "Name": "PowerApp->FolderName,Createnewfolder,Createfile",
+    "ServiceKind": "AddinWadl",
+    "Type": "ServiceInfo"
+  }
+]

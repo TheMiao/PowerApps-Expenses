@@ -1,0 +1,524 @@
+Scr_Submit As screen:
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: =
+    Width: =Max(App.Width, App.DesignWidth)
+
+    tglDialogResponseTrigger_1 As toggleSwitch:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Default: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            // If there are responseActions that are received from the dialog, then this toggle should fire     //
+            // to execute the code in the OnCheck event of this control                                         //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            //REMOVE THE 'false' BELOW AND REPLACE WITH THIS==> !IsEmpty(colDialogResponses)
+            !IsEmpty(colDialogResponses)
+        DisplayMode: =DisplayMode.Disabled
+        FalseHoverFill: =ColorFade(tglDialogResponseTrigger_1.FalseFill, 15%)
+        FalseText: ="Idle"
+        FocusedBorderColor: =tglDialogResponseTrigger_1.BorderColor
+        Font: =Font.'Segoe UI'
+        Height: =58
+        HoverBorderColor: =ColorFade(tglDialogResponseTrigger_1.BorderColor, 15%)
+        OnCheck: |-
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  This toggle control triggers on the colDialogResponses collection and is used to                //
+            //  action responses from the model dialog. As part of the object that is 'sent' to the             //
+            //  modal dialog, we include a responseAction property which identifies the action to take place    //
+            //  if the user selects an option or selects an item from the drop down. This responseAction can    //
+            //  then be tracked by this toggle to initiate certain code or functions. If the responseAction     //
+            //  doesn't contain a value, then we don't have to do anything.                                     //
+            //                                                                                                  //
+            //  For more information about the popup, please go to aka.ms/powerapps-popup                       //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  START: Function Initiation (NO modification required)                                           //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Get a handle on the response object that caused this toggle to trigger
+            Set(
+                varDialogResponse,
+                Last(colDialogResponses)
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  Send trace information of debug is enabled                                                      //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            If(
+                varPopupDebugTrace,
+                Trace(
+                    "cmpPopup Response received",
+                    TraceSeverity.Information,
+                    varDialogResponse
+                )
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  END: Function Initiation (NO modification required)                                             //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  START: Actions (Modify as per business requirement)                                             //
+            //      -Here we use a switch statement to determine which responseAction was 'sent' to the dialog, //
+            //      and what should happen when then user clicks on Yes or selects an option from the drop down //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            If(
+                !IsBlank(varDialogResponse.responseAction),
+                //The trigger will only action something if a responseAction value was sent to the dialog
+                //The below examples are added to show the different ways that data is retrieved based on the type of       input that was specified in the popup instruction
+                Switch(
+                    varDialogResponse.responseAction,
+                    "SetVarYesNo",
+                    Set(
+                        varYesNo,
+                        varDialogResponse.dialogButtonPressed
+                    );
+                    //put own submit form logic here - kewei 0519
+            If(
+                        varDialogResponse.dialogButtonPressed = "Yes",
+                        Patch(Expenses,currentExpense,{new_status:"Submitted"});
+                        Set(varJSON,JSON(PenInput1.Image,JSONFormat.IncludeBinaryData));
+                        Set(varJSON,Mid(varJSON,Find(",",varJSON)+1,Len(varJSON)-Find(",",varJSON)-1));
+                        PISPO.Run(currentExpense.'Expense Name',currentExpense.'Expense Name'&"_Sign",varJSON);
+                        Reset(PenInput1);
+                        Navigate(scr_MyExpenses);
+                    ),
+                    "Get Text Value",
+                    Set(
+                        varText,
+                        varDialogResponse.responseData.textInput
+                    ),
+                    "Get Text Array Value(s)",
+                    Set(
+                        varTextArray,
+                        varDialogResponse.responseData.textArray
+                    ),
+                    "Get Office365Users Selected Value(s)",
+                    Set(
+                        varO365,
+                        varDialogResponse.responseData.office365Users
+                    ),
+                    "Get Rating Value",
+                    Set(
+                        varRating,
+                        varDialogResponse.responseData.rating
+                    ),
+                    "Get Slider Value",
+                    Set(
+                        varSlider,
+                        varDialogResponse.responseData.slider
+                    )
+                )
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  END: Actions (Modify as per ber business requirement)                                           //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  Send trace information of debug is enabled                                                      //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            If(
+                varPopupDebugTrace,
+                Trace(
+                    "cmpPopup Response actioned",
+                    TraceSeverity.Information,
+                    varDialogResponse
+                )
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  Remove the response that was received from the dialog                                           //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            Remove(
+                colDialogResponses,
+                varDialogResponse
+            );
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            //  This section can be ignore, but not deleted. It is required to set variables in the app         //
+            //  that the component might need.                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            If(
+                false,//This will obviously never set the variable and just sets the variable schema
+                Set(
+                    varPopupDebugTrace,
+                    false
+                )
+            )
+        PressedBorderColor: =ColorFade(tglDialogResponseTrigger_1.BorderColor, -15%)
+        Size: =12
+        TrueFill: =RGBA(100, 118, 132, 1)
+        TrueHoverFill: =ColorFade(tglDialogResponseTrigger_1.TrueFill, 15%)
+        TrueText: ="Running"
+        X: =279
+        Y: =1052
+        ZIndex: =1
+
+    form_ExpenseDetails As formViewer:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DataSource: =Expenses
+        Height: =321
+        Item: =currentExpense
+        Width: =640
+        Y: =177
+        ZIndex: =9
+
+        "'Expense Name_DataCard3' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_expense"
+            Default: =ThisItem.'Expense Name'
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Expense Name"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey31 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue27 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey31.Y + DataCardKey31.Height + 5
+                ZIndex: =2
+
+        "'Expense Total Amount_DataCard3' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_expensetotalamount"
+            Default: =ThisItem.'Expense Total Amount'
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Expense Total Amount"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey34 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue30 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =27
+                Y: =DataCardKey34.Y + DataCardKey34.Height + 5
+                ZIndex: =2
+
+        "'Report to_DataCard2' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="new_reportto"
+            Default: =varReportTo
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Report to"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =105
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey36 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue32 As label:
+                BorderColor: =RGBA(32, 54, 71, 1)
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =27
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =58
+                ZIndex: =2
+
+    btn_Submit As button:
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =52
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: |-
+            =Collect(
+                colDialogInstructions,
+                {
+                    // -- Generic Popup Info -- //
+                    type: "YesNo",
+                    inputType: Blank(),
+                    message: "Are you sure submit this invoice approval.",
+                    source: "ThisButton",
+                    iconType: Icon.Information,
+                    iconColor: Color.OrangeRed,
+                    // -- Input Type Configuration (REQUIRED if type = "input") -- //
+                    // -- Link Information (OPTIONAL) -- //
+                    // -- Response Section. (REQUIRED if you want to trigger an action) -- //
+            responseAction: "SetVarYesNo",
+                    originalFunctionRequestID: Blank()
+                }
+            );
+        Size: =24
+        Text: ="Submit"
+        Width: =175
+        X: =238
+        Y: =1052
+        ZIndex: =10
+
+    garList_SubmitItemList As gallery.galleryVertical:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Height: =328
+        Items: =Filter('Expense Items', StartsWith('Expense Item Name',currentExpense.'Expense Name'))
+        Layout: =Layout.Vertical
+        TemplateSize: =54
+        Y: =498
+        ZIndex: =11
+
+        Label12_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =53
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: ="Item" & Right(ThisItem.'Expense Item Name',1)
+            Width: =85
+            X: =12
+            Y: =1
+            ZIndex: =1
+
+        Label13_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =52
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =Text(ThisItem.'Transaction Date',"[$-en-US]yyyy/mm/dd")
+            Width: =144
+            X: =97
+            Y: =1
+            ZIndex: =2
+
+        Label14_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =52
+            Italic: =true
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Amount
+            Width: =180
+            X: =241
+            Y: =1
+            ZIndex: =3
+
+        Label15_1 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =50
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.'Invoice Type'
+            Width: =170
+            X: =421
+            Y: =3
+            ZIndex: =4
+
+    lab_SubmitLoginUser As label:
+        Align: =Align.Right
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Height: =32
+        Size: =10
+        Text: |-
+            ="Logined As: " & User().Email
+        Width: =640
+        Y: =1104
+        ZIndex: =15
+
+    group_PenInput As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        PenInput1 As inkControl:
+            AccessibleLabel: =""
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =181
+            Reset: =true
+            ShowControls: =false
+            Width: =640
+            Y: =871
+            ZIndex: =12
+
+        Label16 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =45
+            Size: =21
+            Text: |-
+                ="Sign:"
+            Width: =640
+            Y: =826
+            ZIndex: =13
+
+    BPF_Submit As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        Icon9_4 As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            Width: =58
+            X: =179
+            Y: =108
+            ZIndex: =4
+
+        Icon9_5 As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            Width: =58
+            X: =409
+            Y: =108
+            ZIndex: =5
+
+        Label8_6 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Height: =56
+            Size: =21
+            Text: ="1. Summary"
+            Width: =179
+            Y: =98
+            ZIndex: =6
+
+        Label8_7 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Height: =56
+            Size: =21
+            Text: ="2. Upload"
+            Width: =179
+            X: =234
+            Y: =100
+            ZIndex: =7
+
+        Label8_8 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =56
+            Size: =21
+            Text: ="3. Sumbit"
+            Width: =179
+            X: =461
+            Y: =98
+            ZIndex: =8
+
+    cmpModalDialog_1 As cmpModalDialog:
+        Visible: |
+            =//////////////////////////////////////////////////////////////////////////////////////////////////////
+            //                                                                                                  //
+            //  The dialog should only be visable if one of these three collections is not exmpty. If you are   //
+            //  not familar with the colFunctionQueue pattern yet, this will be introduced later, but please    //
+            //  also include this in the visible property of the component                                      //
+            //                                                                                                  //
+            //////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            !IsEmpty(colDialogInstructions) || !IsEmpty(colDialogResponses) || !IsBlank(Last(Filter(colFunctionQueue,functionActive)).action)
+        ZIndex: =17
+
+    group_SubmitBanner As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =18
+
+        Image2_3 As image:
+            AccessibleLabel: ="My expense"
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =87
+            Image: =GradientHeader
+            Width: =640
+            ZIndex: =2
+
+        Label5_3 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =85
+            Size: =30
+            Text: ="My Expenses"
+            Width: =280
+            X: =180
+            ZIndex: =3
+
+        icn_ToUpload As icon.ChevronLeft:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =85
+            Icon: =Icon.ChevronLeft
+            OnSelect: =Navigate(Scr_Upload,ScreenTransition.CoverRight)
+            Width: =80
+            ZIndex: =14
+

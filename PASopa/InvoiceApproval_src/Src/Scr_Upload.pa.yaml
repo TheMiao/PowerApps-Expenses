@@ -1,0 +1,739 @@
+Scr_Upload As screen:
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: =
+    Width: =Max(App.Width, App.DesignWidth)
+
+    btn_Add As button:
+        Fill: =RGBA(246, 88, 16, 1)
+        Height: =52
+        HoverFill: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+        OnSelect: |
+            =Set(varDemoFromoAttachmentControl,tr_UploadInvoice.OriginalImage);
+            Set(varBase64Only,Mid(varDemoFromoAttachmentControl,Find(",",varDemoFromoAttachmentControl)+1));
+            Set(varFileExtension,Mid(tr_UploadInvoice.OriginalImage,Find("/",tr_UploadInvoice.OriginalImage)+1, Find(";",tr_UploadInvoice.OriginalImage) - Find("/",tr_UploadInvoice.OriginalImage)-1));
+            Set(varUploadeFileToSPO,'PowerApp->FolderName,Createnewfolder,Createfile'.Run(currentExpense.'Expense Name','Expense Item Name_DataCard1'.Default &"."& varFileExtension,varBase64Only););
+            If(If(Lower(varUploadeFileToSPO.isuploaded)="false", false, true),Notify("Upload successfully!",Success);
+            SubmitForm(form_ItemInput);
+            ResetForm(form_ItemInput);
+            ,Notify("Upload failed!",Error));
+        Size: =24
+        Text: ="Add"
+        Width: =155
+        X: =398
+        Y: =1020
+        ZIndex: =12
+
+    form_ItemInput As form:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DataSource: ='Expense Items'
+        DefaultMode: =New
+        Height: =364
+        Width: =338
+        X: =302
+        Y: =656
+        ZIndex: =13
+
+        "'Transaction Date_DataCard2' As typedDataCard.dateTimeEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_enddate"
+            Default: =ThisItem.'Transaction Date'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Transaction Date"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =112
+            Required: =true
+            Update: =DateValue4.SelectedDate
+            Width: =338
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey29 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =43
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DateValue4 As datepicker:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                CalendarHeaderFill: =RGBA(100, 118, 132, 1)
+                DisplayMode: =Parent.DisplayMode
+                EndYear: =Year(Today())+100
+                Height: =44
+                HoverDateFill: =RGBA(205, 209, 213, 1)
+                IconBackground: =RGBA(100, 118, 132, 1)
+                InputTextPlaceholder: =Text(Date(2001,12,31), Self.Format, Self.Language)
+                IsEditable: =true
+                PaddingBottom: =0
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SelectedDateFill: =RGBA(100, 118, 132, 1)
+                Size: =24
+                StartYear: =1899
+                Tooltip: =Parent.DisplayName
+                Width: =278
+                X: =30
+                Y: =53
+                ZIndex: =2
+
+        Amount_DataCard2 As typedDataCard.numberEditCard:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_amount"
+            Default: =ThisItem.Amount
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Amount"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =103
+            Required: =true
+            Update: =Value(DataCardValue26.Text)
+            Width: =338
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey30 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =36
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue26 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Format: =TextFormat.Number
+                Height: =45
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey30.Y + DataCardKey30.Height + 5
+                ZIndex: =2
+
+            ErrorMessage16 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue26.Y + DataCardValue26.Height
+                ZIndex: =3
+
+            StarVisible16 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey30.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey30.Y
+                ZIndex: =4
+
+        "'Invoice Type_DataCard2' As typedDataCard.comboBoxOptionSetSingleEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_invoicetype"
+            Default: =ThisItem.'Invoice Type'
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Invoice Type"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =107
+            Required: =true
+            Update: =DataCardValue23.Selected.Value
+            Width: =338
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey25 As label:
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =37
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue23 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(100, 118, 132, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                DefaultSelectedItems: =[Parent.Default]
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =42
+                HoverFill: =RGBA(205, 209, 213, 1)
+                IsSearchable: =false
+                Items: =Choices(ThisItem.'Invoice Type')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(32, 54, 71, 1)
+                SearchItems: =[]
+                SelectionFill: =RGBA(100, 118, 132, 1)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =278
+                X: =30
+                Y: =58
+                ZIndex: =2
+
+            ErrorMessage11 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue23.Y + DataCardValue23.Height
+                ZIndex: =3
+
+            StarVisible11 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey25.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey25.Y
+                ZIndex: =4
+
+        "'Expense Name_DataCard6' As typedDataCard.comboBoxEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_Expense"
+            Default: =currentExpense
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Expense Name"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue40.Selected
+            Visible: =false
+            Width: =338
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey44 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue40 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                ChevronBackground: =RGBA(100, 118, 132, 1)
+                ChevronHoverBackground: =ColorFade(RGBA(100, 118, 132, 1), -20%)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["cr946_expense"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverFill: =RGBA(205, 209, 213, 1)
+                Items: =Choices([@'Expense Items'].'Expense Name')
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                PressedFill: =RGBA(32, 54, 71, 1)
+                SearchFields: =["cr946_expense"]
+                SearchItems: =Search(Choices([@'Expense Items'].'Expense Name'),DataCardValue40.SearchText,"cr946_expense")
+                SelectionFill: =RGBA(100, 118, 132, 1)
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey44.Y + DataCardKey44.Height + 5
+                ZIndex: =2
+
+            ErrorMessage21 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue40.Y + DataCardValue40.Height
+                ZIndex: =3
+
+            StarVisible21 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey44.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey44.Y
+                ZIndex: =4
+
+        "'Expense Item Name_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_expenseitemname"
+            Default: =currentExpense.'Expense Name' &CountRows(Filter('Expense Items', StartsWith('Expense Item Name',currentExpense.'Expense Name')))+1
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Expense Item Name"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =119
+            MaxLength: =DataSourceInfo([@'Expense Items'], DataSourceInfo.MaxLength, "cr946_expenseitemname")
+            Required: =true
+            Update: =DataCardValue11.Text
+            Visible: =false
+            Width: =338
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardKey11 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue11 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey11.Y + DataCardKey11.Height + 5
+                ZIndex: =2
+
+            ErrorMessage10 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue11.Y + DataCardValue11.Height
+                ZIndex: =3
+
+            StarVisible9 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey11.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey11.Y
+                ZIndex: =4
+
+        "'Attachment Link_DataCard1' As typedDataCard.urlEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_attachmentlink"
+            Default: =varUploadeFileToSPO.filepath
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Attachment Link"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue7.Text
+            Visible: =false
+            Width: =338
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue7 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
+
+            ErrorMessage7 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue7.Y + DataCardValue7.Height
+                ZIndex: =3
+
+            StarVisible5 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey4.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4.Y
+                ZIndex: =4
+
+    garList_ExpenseItemList As gallery.galleryVertical:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Fill: =RGBA(224, 204, 175, 0.14)
+        Height: =432
+        Items: =Filter('Expense Items', StartsWith('Expense Item Name',currentExpense.'Expense Name'))
+        Layout: =Layout.Vertical
+        TemplateSize: =64
+        Y: =224
+        ZIndex: =19
+
+        Label12 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =32
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =Right(ThisItem.'Expense Item Name',1)
+            Width: =70
+            X: =12
+            Y: =14
+            ZIndex: =1
+
+        Label13 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =Text(ThisItem.'Transaction Date',"[$-en-US]yyyy/mm/dd")
+            Width: =123
+            X: =42
+            Y: =1
+            ZIndex: =2
+
+        Label14 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =60
+            Italic: =true
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.Amount
+            Width: =146
+            X: =165
+            Y: =1
+            ZIndex: =3
+
+        Label15 As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =59
+            OnSelect: =Select(Parent)
+            Size: =15
+            Text: =ThisItem.'Invoice Type'
+            Width: =226
+            X: =311
+            Y: =2
+            ZIndex: =4
+
+        Icon1 As icon.Trash:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =59
+            Icon: =Icon.Trash
+            OnSelect: =Remove('Expense Items',ThisItem);
+            Visible: =If(ThisItem.'Expense Item Name' = "", false,true)
+            Width: =29
+            X: =581
+            Y: =2
+            ZIndex: =5
+
+        Icon1_1 As icon.Trash:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =59
+            Icon: =Icon.Document
+            OnSelect: =Launch(ThisItem.'Attachment Link')
+            Visible: =If(ThisItem.'Expense Item Name' = "", false,true)
+            Width: =29
+            X: =537
+            ZIndex: =6
+
+    lab_UploadLoginUser As label:
+        Align: =Align.Right
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Height: =32
+        Size: =10
+        Text: |-
+            ="Logined As: " & User().Email
+        Width: =640
+        Y: =1104
+        ZIndex: =23
+
+    BPF_Upload As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        Icon9_2 As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            Width: =58
+            X: =179
+            Y: =108
+            ZIndex: =3
+
+        Icon9_3 As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            Width: =58
+            X: =409
+            Y: =108
+            ZIndex: =4
+
+        Label8_3 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Height: =56
+            Size: =21
+            Text: ="1. Summary"
+            Width: =179
+            Y: =98
+            ZIndex: =5
+
+        Label8_4 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =56
+            Size: =21
+            Text: ="2. Upload"
+            Width: =179
+            X: =234
+            Y: =100
+            ZIndex: =6
+
+        Label8_5 As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Height: =56
+            Size: =21
+            Text: ="3. Submit"
+            Width: =179
+            X: =461
+            Y: =98
+            ZIndex: =7
+
+    group_UploadBanner As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        lab_UploadBanner As image:
+            AccessibleLabel: ="My expense"
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =87
+            Image: =GradientHeader
+            Width: =640
+            ZIndex: =1
+
+        lab_UploadTitle As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =85
+            Size: =30
+            Text: ="My Expenses"
+            Width: =280
+            X: =180
+            ZIndex: =2
+
+        lab_ToSummaryPage As icon.ChevronLeft:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =85
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =ResetForm(form_ItemInput);Reset(tr_UploadInvoice);
+                Patch(Expenses,currentExpense,{cr946_expensetotalamount: Value(lab_UploadTotalAmount.Text)});Set(currentExpense,LookUp(Expenses,'Expense Name'=currentExpense.'Expense Name'));
+                Navigate(scr_Summary,ScreenTransition.CoverRight)
+            Width: =80
+            Y: =2
+            ZIndex: =21
+
+        lab_ToSubmitPage As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =80
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =ResetForm(form_ItemInput);Reset(tr_UploadInvoice);
+                Patch(Expenses,currentExpense,{cr946_expensetotalamount: Value(lab_UploadTotalAmount.Text)});
+                Set(currentExpense,LookUp(Expenses,'Expense Name'=currentExpense.'Expense Name'));
+                Navigate(Scr_Submit,ScreenTransition.Cover)
+            Width: =87
+            X: =553
+            Y: =3
+            ZIndex: =22
+
+    group_ExpenseInfo As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =23
+
+        lab_UploadExpenseId As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =68
+            Size: =21
+            Text: =currentExpense.'Expense Name'
+            Width: =302
+            Y: =156
+            ZIndex: =17
+
+        lab_UploadTotalAmount As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =69
+            Size: =21
+            Text: =Text(Sum(Filter('Expense Items', StartsWith('Expense Item Name',currentExpense.'Expense Name')),Amount))
+            Width: =145
+            X: =491
+            Y: =156
+            ZIndex: =18
+
+        lab_UploadTotal As label:
+            Align: =Align.Right
+            BorderColor: =RGBA(32, 54, 71, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =69
+            Size: =21
+            Text: |-
+                ="Total:"
+            Width: =107
+            X: =384
+            Y: =156
+            ZIndex: =20
+
+    tr_UploadInvoice As TextRecognizer:
+        BorderColor: =RGBA(210, 208, 206, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        DisplayMode: =DisplayMode.Edit
+        FillColor: =RGBA(61, 95, 174, 1)
+        FontColor: =RGBA(255, 255, 255, 1)
+        Height: =480
+        Width: =302
+        X: =0
+        Y: =656
+        ZIndex: =24
+

@@ -1,0 +1,7 @@
+App As appinfo:
+    MinScreenHeight: =320
+    MinScreenWidth: =320
+    OnStart: |-
+        =Set(isNew,true);
+        Set(currentExpense,Blank());
+

@@ -1,0 +1,109 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr946_expenses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr946_expense",
+    "MaxGetRowsCount": 500,
+    "Name": "Expenses",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr6bc_Demo_Expense_cr946_Expense": "Demos",
+      "cr946_expense": "Expense Name",
+      "cr946_expense_AsyncOperations": "System Jobs",
+      "cr946_expense_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr946_Expense_cr946_Expense_cr946_Expense": "Expense Items",
+      "cr946_expense_DuplicateBaseRecord": "Duplicate Records (cr946_expense_DuplicateBaseRecord)",
+      "cr946_expense_DuplicateMatchingRecord": "Duplicate Records (cr946_expense_DuplicateMatchingRecord)",
+      "cr946_Expense_ExpenseTarget_cr946_Expense": "Expense Targets",
+      "cr946_expense_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr946_expense_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr946_expense_ProcessSession": "Process Sessions",
+      "cr946_expense_SyncErrors": "Sync Errors",
+      "cr946_expensedescription": "Expense Description",
+      "cr946_expenseid": "Expense Id",
+      "cr946_expenseperiod": "Expense Period",
+      "cr946_expensetotalamount": "Expense Total Amount",
+      "cr946_financecontroller": "Finance Controller",
+      "cr946_owneremail": "Owner Email",
+      "cr946_reporttoemail": "Report To Email",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "new_reportto": "Report to",
+      "new_status": "Approval status",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Expenses",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Expenses (Views)",
+    "Name": "_cr946_expense_views",
+    "RelatedEntityName": "Expenses",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "549336a5-6bbd-4228-9f29-f35d7a169336": "Expense Advanced Find View",
+      "89ba7247-a605-4570-b418-a22b6357673e": "Active Expenses",
+      "a7b48b16-c49b-ea11-a812-000d3a852c27": "My Expenses",
+      "ab1b2798-b961-4e11-860d-3063714ac91e": "Expense Associated View",
+      "ce934ff9-73a3-454c-88ba-e24b9f8ab327": "Inactive Expenses",
+      "f134c153-3a6b-4932-90c7-f55657c7a3f2": "Expense Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (Expenses)",
+    "Name": "cr946_expense_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Expenses"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Expenses",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Expenses)",
+    "Name": "cr946_expense_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Expenses"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Expenses",
+    "Type": "OptionSetInfo"
+  }
+]

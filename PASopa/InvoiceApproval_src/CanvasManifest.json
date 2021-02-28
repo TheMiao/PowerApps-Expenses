@@ -1,0 +1,68 @@
+{
+  "FormatVersion": "0.18",
+  "Header": {
+    "DocVersion": "1.301",
+    "MinVersionToLoad": "1.301",
+    "MSAppStructureVersion": "2.0"
+  },
+  "Properties": {
+    "AppCreationSource": "AppFromScratch",
+    "AppDescription": "",
+    "AppPreviewFlagsKey": [
+      "delayloadscreens",
+      "projectionmapping",
+      "usedisplaynamemetadata",
+      "usenonblockingonstartrule",
+      "useguiddatatypes",
+      "useexperimentalcdsconnector",
+      "useenforcesavedatalimits",
+      "componentauthoring",
+      "reliableconcurrent",
+      "dataTableV2Control",
+      "nativecdsexperimental",
+      "useexperimentalsqlconnector",
+      "enablecdsfileandlargeimage",
+      "enhanceddelegation",
+      "aibuilderserviceenrollment",
+      "enablesummerlandgeospatialfeatures",
+      "enablesummerlandmixedrealityfeatures"
+    ],
+    "Author": "",
+    "ContainsThirdPartyPcfControls": false,
+    "DefaultConnectedDataSourceMaxGetRowsCount": 500,
+    "DocumentAppType": "Phone",
+    "DocumentLayoutHeight": 1136,
+    "DocumentLayoutLockOrientation": true,
+    "DocumentLayoutMaintainAspectRatio": true,
+    "DocumentLayoutOrientation": "portrait",
+    "DocumentLayoutScaleToFit": true,
+    "DocumentLayoutWidth": 640,
+    "DocumentType": "App",
+    "EnableInstrumentation": false,
+    "ErrorCount": 16,
+    "FileID": "47300d59-042c-4688-a83a-3fffbc12e14b",
+    "Id": "18043980-6c6b-406d-84ab-1b8799545982",
+    "InstrumentationKey": "",
+    "Name": "Invoice+Approval+(LLWZ+Team).msapp",
+    "OriginatingVersion": "1.285"
+  },
+  "PublishInfo": {
+    "AppName": "Invoice Approval (LLWZ Team)",
+    "BackgroundColor": "rgba(0, 176, 240, 1)",
+    "IconColor": "RGBA(255,255,255,1)",
+    "IconName": "Edit",
+    "LogoFileName": "logo.jpg",
+    "PublishDataLocally": false,
+    "PublishResourcesLocally": false,
+    "PublishTarget": "player",
+    "UserLocale": "en-US"
+  },
+  "ScreenOrder": [
+    "scr_MyExpenses",
+    "scr_Summary",
+    "Scr_Upload",
+    "Scr_Submit",
+    "Screen1",
+    "Screen3"
+  ]
+}

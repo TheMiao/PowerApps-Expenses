@@ -1,0 +1,758 @@
+scr_Summary As screen:
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(100, 118, 132, 1)
+    OnVisible: =Set(varReportTo, Office365Users.Manager(User().Email).DisplayName);
+    Width: =Max(App.Width, App.DesignWidth)
+
+    form_ExpensesForm As form:
+        BorderColor: =RGBA(32, 54, 71, 1)
+        DataSource: =Expenses
+        DefaultMode: =If(isNew,New,If(currentExpense.'Approval status' = "Draft", FormMode.Edit,FormMode.View))
+        Height: =830
+        Item: =If(!isNew,currentExpense)
+        OnSuccess: =Set(currentExpense,form_ExpensesForm.LastSubmit);Set(isNew,false);
+        Width: =640
+        Y: =180
+        ZIndex: =1
+
+        "'Expense Name_DataCard4' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_expense"
+            Default: =If(isNew,"Exp-" & Text(Now(),"[$-en-US]yyyymmdd-hhmmss"),ThisItem.'Expense Name')
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Expense Name"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =143
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "cr946_expense")
+            Required: =true
+            Update: =DataCardValue9.Text
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey8 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =580
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue9 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =75
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =580
+                X: =30
+                Y: =58
+                ZIndex: =2
+
+            ErrorMessage8 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue9.Y + DataCardValue9.Height
+                ZIndex: =3
+
+            StarVisible7 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey8.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey8.Y
+                ZIndex: =4
+
+        "'Expense Total Amount_DataCard2' As typedDataCard.numberEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_expensetotalamount"
+            Default: =If(isNew,"0",ThisItem.'Expense Total Amount')
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Expense Total Amount"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =Value(DataCardValue10.Text)
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey10 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue10 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Format: =TextFormat.Number
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey10.Y + DataCardKey10.Height + 5
+                ZIndex: =2
+
+            ErrorMessage9 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue10.Y + DataCardValue10.Height
+                ZIndex: =3
+
+            StarVisible8 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey10.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey10.Y
+                ZIndex: =4
+
+        "'Report to_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DataField: ="new_reportto"
+            Default: =If(isNew,varReportTo,ThisItem.'Report to')
+            DisplayMode: =DisplayMode.View
+            DisplayName: ="Report to"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "new_reportto")
+            Required: =false
+            Update: =DataCardValue6.Text
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey7 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =9
+                ZIndex: =1
+
+            DataCardValue6 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey7.Y + DataCardKey7.Height + 5
+                ZIndex: =2
+
+            ErrorMessage6 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue6.Y + DataCardValue6.Height
+                ZIndex: =3
+
+            StarVisible6 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey7.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey7.Y
+                ZIndex: =4
+
+        "'Expense Description_DataCard1' As typedDataCard.textualMultiLineEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Dashed
+            BorderThickness: =1
+            DataField: ="cr946_expensedescription"
+            Default: =If(isNew,"",ThisItem.'Expense Description')
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Expense Description"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue4.Text
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey5 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =27
+                Y: =9
+                ZIndex: =1
+
+            DataCardValue4 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                FontWeight: =FontWeight.Bold
+                Height: =140
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                Mode: =TextMode.MultiLine
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =591
+                X: =30
+                Y: =66
+                ZIndex: =2
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4.Y + DataCardValue4.Height
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey5.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey5.Y
+                ZIndex: =4
+
+        "'Approval status_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="new_status"
+            Default: =If(isNew,"Draft",ThisItem.'Approval status')
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Approval status"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =189
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "new_status")
+            Required: =false
+            Update: =DataCardValue5.Text
+            Visible: =!isNew
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            DataCardValue5 As text:
+                Align: =Align.Center
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                BorderThickness: =0
+                Color: =RGBA(255, 255, 255, 1)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Fill: =Switch(Parent.Default,"Submitted", RGBA(0, 134, 208, 1),"Approved", RGBA(54, 176, 75, 1),"Draft",RGBA(186, 202, 226, 1),"Rejected", RGBA(255, 0, 0, 1))
+                Height: =63
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverColor: =Switch(Parent.Default,"Submitted", RGBA(0, 134, 208, 1),"Approved", RGBA(54, 176, 75, 1),"Draft",RGBA(186, 202, 226, 1),"Rejected", RGBA(255, 0, 0, 1))
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =160
+                X: =244
+                ZIndex: =2
+
+            ErrorMessage5 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =34
+                Y: =DataCardValue5.Y + DataCardValue5.Height
+                ZIndex: =3
+
+        "'Report To Email_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_reporttoemail"
+            Default: |-
+                =//If(isNew,Office365Users.Manager(User().Email).Mail,ThisItem.'Report to')
+                If(isNew,"chriswang@officialmiao.onmicrosoft.com",ThisItem.'Finance Controller')
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Report To Email"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "cr946_reporttoemail")
+            Required: =false
+            Update: =DataCardValue1.Text
+            Visible: =false
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey1 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue1 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey1.Y + DataCardKey1.Height + 5
+                ZIndex: =2
+
+            ErrorMessage1 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue1.Y + DataCardValue1.Height
+                ZIndex: =3
+
+            StarVisible1 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey1.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey1.Y
+                ZIndex: =4
+
+        "'Finance Controller_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_financecontroller"
+            Default: =If(isNew,"chriswang@officialmiao.onmicrosoft.com",ThisItem.'Finance Controller')
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Finance Controller"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "cr946_financecontroller")
+            Required: =false
+            Update: =DataCardValue2.Text
+            Visible: =false
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =1
+
+            DataCardKey2 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue2 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey2.Y + DataCardKey2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue2.Y + DataCardValue2.Height
+                ZIndex: =3
+
+            StarVisible2 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey2.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey2.Y
+                ZIndex: =4
+
+        "'Owner Email_DataCard1' As typedDataCard.textualEditCard":
+            BorderColor: =RGBA(32, 54, 71, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="cr946_owneremail"
+            Default: =If(isNew,User().Email,ThisItem.'Owner Email')
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="Owner Email"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@Expenses], DataSourceInfo.MaxLength, "cr946_owneremail")
+            Required: =false
+            Update: =DataCardValue3.Text
+            Visible: =false
+            Width: =640
+            X: =0
+            Y: =7
+            ZIndex: =1
+
+            DataCardKey3 As label:
+                AutoHeight: =true
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                HoverBorderColor: =RGBA(32, 54, 71, 1)
+                HoverFill: =RGBA(205, 209, 213, 1)
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey3.Y + DataCardKey3.Height + 5
+                ZIndex: =2
+
+            ErrorMessage3 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3.Y + DataCardValue3.Height
+                ZIndex: =3
+
+            StarVisible3 As label:
+                Align: =Align.Center
+                Color: =RGBA(32, 54, 71, 1)
+                Height: =DataCardKey3.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey3.Y
+                ZIndex: =4
+
+    lab_SummaryLoginUser As label:
+        Align: =Align.Right
+        BorderColor: =RGBA(32, 54, 71, 1)
+        Height: =32
+        Size: =10
+        Text: |-
+            ="Logined As: " & User().Email
+        Width: =640
+        Y: =1104
+        ZIndex: =20
+
+    BannerArea_Summary As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =20
+
+        img_BannerBackground2 As image:
+            AccessibleLabel: ="My expense"
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Height: =87
+            Image: =GradientHeader
+            Width: =640
+            ZIndex: =14
+
+        lab_BannerTitle As label:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =85
+            Size: =30
+            Text: ="My Expenses"
+            Width: =280
+            X: =179
+            ZIndex: =15
+
+        icn_GoUploadPage As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =80
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =SubmitForm(form_ExpensesForm);Set(isNew,false);Set(currentExpense,form_ExpensesForm.LastSubmit);
+                Navigate(Scr_Upload,ScreenTransition.Cover)
+            Visible: =If(currentExpense.'Approval status' = "Draft" || isNew,true,false)
+            Width: =87
+            X: =553
+            Y: =5
+            ZIndex: =18
+
+        icn_BackMyExpenses As icon.ChevronLeft:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =85
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =ResetForm(form_ExpensesForm);
+                Navigate(scr_MyExpenses,ScreenTransition.CoverRight)
+            Width: =80
+            ZIndex: =19
+
+    BPF_Summary As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =20
+
+        icn_Next2 As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            Width: =58
+            X: =179
+            Y: =121
+            ZIndex: =7
+
+        icn_Next1 As icon.ChevronRight:
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(32, 54, 71, 1)
+            Height: =37
+            Icon: =Icon.ChevronRight
+            Width: =58
+            X: =409
+            Y: =121
+            ZIndex: =10
+
+        lab_SummarySummary As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(246, 88, 16, 1)
+            Height: =56
+            Size: =21
+            Text: ="1. Summary"
+            Width: =179
+            Y: =111
+            ZIndex: =11
+
+        lab_SummaryUpload As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Height: =56
+            Size: =21
+            Text: ="2. Upload"
+            Width: =179
+            X: =237
+            Y: =111
+            ZIndex: =12
+
+        lab_SummarySubmit As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(32, 54, 71, 1)
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(100, 118, 132, 1)
+            Height: =56
+            Size: =21
+            Text: ="3. Sumbit"
+            Width: =179
+            X: =461
+            Y: =111
+            ZIndex: =13
+

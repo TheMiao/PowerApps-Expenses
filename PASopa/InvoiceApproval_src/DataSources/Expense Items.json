@@ -1,0 +1,129 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr946_expenseitems",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr946_expenseitem",
+    "MaxGetRowsCount": 500,
+    "Name": "Expense Items",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr946_amount": "Amount",
+      "cr946_attachmentlink": "Attachment Link",
+      "cr946_enddate": "Transaction Date",
+      "cr946_Expense": "Expense Name",
+      "cr946_expenseitem_AsyncOperations": "System Jobs",
+      "cr946_expenseitem_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr946_ExpenseItem_cr946_ExpenseItem_cr946": "Invoices",
+      "cr946_expenseitem_DuplicateBaseRecord": "Duplicate Records (cr946_expenseitem_DuplicateBaseRecord)",
+      "cr946_expenseitem_DuplicateMatchingRecord": "Duplicate Records (cr946_expenseitem_DuplicateMatchingRecord)",
+      "cr946_expenseitem_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr946_expenseitem_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr946_expenseitem_ProcessSession": "Process Sessions",
+      "cr946_expenseitem_SyncErrors": "Sync Errors",
+      "cr946_expenseitemdescription": "Expense Item Description",
+      "cr946_expenseitemid": "Expense Item",
+      "cr946_expenseitemname": "Expense Item Name",
+      "cr946_invoicetype": "Invoice Type",
+      "cr946_reportto": "Report To",
+      "cr946_startdate": "Start Date",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Expense Items",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Expense Items (Views)",
+    "Name": "_cr946_expenseitem_views",
+    "RelatedEntityName": "Expense Items",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2d813333-871b-483a-b303-68d52b428bc2": "Expense Item Lookup View",
+      "46d0fa9c-d2af-421c-a72f-bcbd51d75665": "Expense Item Advanced Find View",
+      "546bfbfc-743b-4484-a082-f54f091d5432": "Inactive Expense Items",
+      "8a7e5bc5-f0d3-47fa-8bfa-7b80a359134a": "Expense Item Associated View",
+      "ebfc545a-245a-4208-a10a-74e3dede48f3": "Active Expense Items"
+    }
+  },
+  {
+    "DisplayName": "Status (Expense Items)",
+    "Name": "cr946_expenseitem_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Expense Items"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Expense Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Expense Items)",
+    "Name": "cr946_expenseitem_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Expense Items"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Expense Items",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Invoice Type",
+    "Name": "cr946_invoicetype",
+    "OptionSetInfoNameMapping": {
+      "694280000": "Long Distance Transportation",
+      "694280001": "Accommodation",
+      "694280002": "Taxi",
+      "694280003": "Food",
+      "985210001": "Transport "
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "cr946_invoicetype",
+        "OptionSetReferenceEntityName": "Expense Items"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "cr946_invoicetype",
+    "RelatedEntityName": "Expense Items",
+    "Type": "OptionSetInfo"
+  }
+]

@@ -1,0 +1,3545 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.4.json",
+  "runs": [
+    {
+      "columnKind": "utf16CodeUnits",
+      "invocations": [
+        {
+          "endTimeUtc": "2021-02-28T17:11:26.346Z",
+          "executionSuccessful": true,
+          "startTimeUtc": "2021-02-28T17:11:26.326Z"
+        }
+      ],
+      "results": [
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1363,
+                  "charOffset": 523,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////\n//                                                                                  //\n// IGNORE BUT DON'T DELETE: This is just a dummy button to make sure that           //\n//                                                                                  //\n// the component recognises the required Collection schemas                         //\n//////////////////////////////////////////////////////////////////////////////////////\n\nClearCollect(\n    colDialogInstructions,\n    {\n        // -- Generic Popup Info -- //\n        type: \"Ok\",\n        inputType: \"\",\n        message: \"\",\n        source: \"\",\n        iconType: Icon.Information,\n        iconColor: Color.OrangeRed,\n        // -- Input Type Configuration (REQUIRED if type = \"input\") -- //\n        configTextInput: {\n            default: \"\",\n            hintText: \"\",\n            tooltip: \"\"\n        },\n        configTextArray: {\n            tooltip: \"\",\n            arrayList: [\"\"],\n            defaultValue: \"\",\n            allowMultipleSelect: false\n        },\n        configOffice365Users: {\n            tooltip: \"\",\n            allowMultipleSelect: false\n        },\n        configRating: {\n            default: 1,\n            tooltip: \"\",\n            max: 1,\n            showValue: true\n        },\n        configSlider: {\n            default: 1,\n            tooltip: \"\",\n            min: 1,\n            max: 1,\n            showValue: true\n        },\n        // -- Link Information (OPTIONAL) -- //\n        link: {\n            label: \"\",\n            url: \"\",\n            tooltip: \"Please check out more information about the business rules for this application\"\n        },\n        // -- Response Section. (REQUIRED if you want to trigger an action) -- //\n        responseAction: \"\",\n        originalFunctionRequestID: Blank()\n    }\n);\nClearCollect(\n    colFunctionQueue,\n    {\n        function: \"Validation\",\n        action: \"\",\n        calledFrom: \"\",\n        userActivatedCall: true,\n        sessionID: \"\",\n        requestID: Text(GUID()),\n        requestTime: Now(),\n        startTime: Blank(),\n        endTime: Blank(),\n        functionActive: true,\n        haltProcess: false,\n        inputResponse: Blank(),\n        dialogButtonPressed: Blank()\n    }\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 423,
+                  "charOffset": 1888,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////\n//                                                                                  //\n// IGNORE BUT DON'T DELETE: This is just a dummy button to make sure that           //\n//                                                                                  //\n// the component recognises the required Collection schemas                         //\n//////////////////////////////////////////////////////////////////////////////////////\n\nClearCollect(\n    colDialogInstructions,\n    {\n        // -- Generic Popup Info -- //\n        type: \"Ok\",\n        inputType: \"\",\n        message: \"\",\n        source: \"\",\n        iconType: Icon.Information,\n        iconColor: Color.OrangeRed,\n        // -- Input Type Configuration (REQUIRED if type = \"input\") -- //\n        configTextInput: {\n            default: \"\",\n            hintText: \"\",\n            tooltip: \"\"\n        },\n        configTextArray: {\n            tooltip: \"\",\n            arrayList: [\"\"],\n            defaultValue: \"\",\n            allowMultipleSelect: false\n        },\n        configOffice365Users: {\n            tooltip: \"\",\n            allowMultipleSelect: false\n        },\n        configRating: {\n            default: 1,\n            tooltip: \"\",\n            max: 1,\n            showValue: true\n        },\n        configSlider: {\n            default: 1,\n            tooltip: \"\",\n            min: 1,\n            max: 1,\n            showValue: true\n        },\n        // -- Link Information (OPTIONAL) -- //\n        link: {\n            label: \"\",\n            url: \"\",\n            tooltip: \"Please check out more information about the business rules for this application\"\n        },\n        // -- Response Section. (REQUIRED if you want to trigger an action) -- //\n        responseAction: \"\",\n        originalFunctionRequestID: Blank()\n    }\n);\nClearCollect(\n    colFunctionQueue,\n    {\n        function: \"Validation\",\n        action: \"\",\n        calledFrom: \"\",\n        userActivatedCall: true,\n        sessionID: \"\",\n        requestID: Text(GUID()),\n        requestTime: Now(),\n        startTime: Blank(),\n        endTime: Blank(),\n        functionActive: true,\n        haltProcess: false,\n        inputResponse: Blank(),\n        dialogButtonPressed: Blank()\n    }\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.IGNORE BUT DONT DELETE - REQUIRED SCHEMA"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colFunctionQueue"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.btnExamplePopupInstruction.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.btnExamplePopupInstruction.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1838,
+                  "charOffset": 721,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                                                                                  //\n//  For more information on how to structure the instruction to the popup as well as the response   //\n//  that it will be sending back please refer to:                                                   //\n//  https://aka.ms/powerapps-popup                                                                  //\n//                                                                                                  //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nCollect(\n    colDialogInstructions,\n    {\n        // -- Generic Popup Info -- //\n        type: \"Ok\",\n        inputType: Blank(),\n        message: \"Congratulations with installing your brand new Modal Dialog Component into your first app. You are a rock star! If you agree, click on Ok below.\",\n        source: \"ThisButton\",\n        iconType: Icon.Information,\n        iconColor: ColorValue(\"#712773\"),\n        // -- Input Type Configuration (REQUIRED if type = \"input\") -- //\n        configTextInput: {\n            default: \"Default Value\",\n            hintText: \"Check this out\"\n        },\n        configTextArray: {\n            tooltip: \"Please choose one of these options\",\n            arrayList: [\n                \"Power Apps Rocks\",\n                \"Power Apps is the best\"\n            ],\n            defaultValue: \"Power Apps Rocks\",\n            allowMultipleSelect: false\n        },\n        configOffice365Users: {\n            tooltip: \"Please select one of the users in you address list\",\n            allowMultipleSelect: false\n        },\n        configRating: {\n            default: 0,\n            tooltip: \"Please rate the component from 1 to 5\",\n            max: 5,\n            showValue: true\n        },\n        configSlider: {\n            default: 0,\n            tooltip: \"How many times did you struggle during this installation\",\n            min: 1,\n            max: 10,\n            showValue: true\n        },\n        // -- Link Information (OPTIONAL) -- //\n        link: {\n            label: \"More Cool Info\",\n            url: \"https://aka.ms/powerapps-popup\",\n            tooltip: \"Please check out more information about the modal dialog component\"\n        },\n        // -- Response Section. (REQUIRED if you want to trigger an action) -- //\n        responseAction: \"\",\n        originalFunctionRequestID: Blank()\n    }\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.btnExamplePopupInstruction"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.OnCheck"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.OnCheck",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 55,
+                  "charOffset": 5065,
+                  "snippet": {
+                    "text": "//////////////////////////////////////////////////////////////////////////////////////////////////////\n//                                                                                                  //\n//  This toggle control triggers on the colDialogResponses collection and is used to                //\n//  action responses from the model dialog. As part of the object that is 'sent' to the             //\n//  modal dialog, we include a responseAction property which identifies the action to take place    //\n//  if the user selects an option or selects an item from the drop down. This responseAction can    //\n//  then be tracked by this toggle to initiate certain code or functions. If the responseAction     //\n//  doesn't contain a value, then we don't have to do anything.                                     //\n//                                                                                                  //\n//  For more information about the popup, please go to aka.ms/powerapps-popup                       //\n//                                                                                                  //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  START: Function Initiation (NO modification required)                                           //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//Get a handle on the response object that caused this toggle to trigger\nSet(\n    varDialogResponse,\n    Last(colDialogResponses)\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  Send trace information of debug is enabled                                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nIf(\n    varPopupDebugTrace,\n    Trace(\n        \"cmpPopup Response received\",\n        TraceSeverity.Information,\n        varDialogResponse\n    )\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  END: Function Initiation (NO modification required)                                             //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  START: Actions (Modify as per business requirement)                                             //\n//      -Here we use a switch statement to determine which responseAction was 'sent' to the dialog, //\n//      and what should happen when then user clicks on Yes or selects an option from the drop down //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nIf(\n    !IsBlank(varDialogResponse.responseAction),\n    //The trigger will only action something if a responseAction value was sent to the dialog\n    //The below examples are added to show the different ways that data is retrieved based on the type of       input that was specified in the popup instruction\n    Switch(\n        varDialogResponse.responseAction,\n        \"Get Text Value\",\n        Set(\n            varText,\n            varDialogResponse.responseData.textInput\n        ),\n        \"Get Text Array Value(s)\",\n        Set(\n            varTextArray,\n            varDialogResponse.responseData.textArray\n        ),\n        \"Get Office365Users Selected Value(s)\",\n        Set(\n            varO365,\n            varDialogResponse.responseData.office365Users\n        ),\n        \"Get Rating Value\",\n        Set(\n            varRating,\n            varDialogResponse.responseData.rating\n        ),\n        \"Get Slider Value\",\n        Set(\n            varSlider,\n            varDialogResponse.responseData.slider\n        )\n    )\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  END: Actions (Modify as per ber business requirement)                                           //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  Send trace information of debug is enabled                                                      //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nIf(\n    varPopupDebugTrace,\n    Trace(\n        \"cmpPopup Response actioned\",\n        TraceSeverity.Information,\n        varDialogResponse\n    )\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  Remove the response that was received from the dialog                                           //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nRemove(\n    colDialogResponses,\n    varDialogResponse\n);\n//////////////////////////////////////////////////////////////////////////////////////////////////////\n//  This section can be ignore, but not deleted. It is required to set variables in the app         //\n//  that the component might need.                                                                  //\n//////////////////////////////////////////////////////////////////////////////////////////////////////\nIf(\n    false,//This will obviously never set the variable and just sets the variable schema\n    Set(\n        varPopupDebugTrace,\n        false\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnCheck",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.tglDialogResponseTrigger"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1520,
+                  "charOffset": 445,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 1971,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 267,
+                  "charOffset": 2068,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 2341,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 266,
+                  "charOffset": 2437,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogResponses"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 2709,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 80,
+                  "charOffset": 2809,
+                  "snippet": {
+                    "text": "Switch(\n    mdGalButtons.Selected.key,\n    \"ok\",\n/*////////////////////////////////////////////////////////////////////////////////////////////////\n//  Write response to colDialogResponses collection in order for action toggle in main app  //\n//  to fire actions on response                                                                 //\n////////////////////////////////////////////////////////////////////////////////////////////////*/\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Ok\",\n            responseData: {\n                textInput: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextInput\",\n                    mdInputText.Text,\n                    Blank()\n                ),\n                rating: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Rating\",\n                    mdInputRating.Value,\n                    Blank()\n                ),\n                slider: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Slider\",\n                    mdInputSlider.Value,\n                    Blank()\n                ),\n                textArray: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"TextArray\",\n                    mdInputArrayText.SelectedItems.Value,\n                    Blank()\n                ),\n                office365Users: If(\n                    ThisItem.instructionRequest.type = \"Input\" && ThisItem.instructionRequest.inputType = \"Office365Users\",\n                    mdInput365Users.SelectedItems,\n                    Blank()\n                )\n            },\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"yes\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"Yes\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"no\",\n    Collect(\n        colDialogResponses,\n        {\n            dialogButtonPressed: \"No\",\n            responseAction: ThisItem.instructionRequest.responseAction,\n            originalFunctionRequestID: ThisItem.instructionRequest.originalFunctionRequestID\n        }\n    );\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    ),\n    \"cancel\",\n    Remove(\n        colDialogInstructions,\n        ThisItem.instructionRequest\n    )\n)"
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons.galleryTemplate2"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "colDialogInstructions"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-WarnComponentUsingCollection",
+          "ruleIndex": 0
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charOffset": 151,
+                  "snippet": {
+                    "text": "Set(varSubmitResult, SubmitForm(EditForm1));\r\nIf(varSubmitResult, Notify(\"Update successfully!\", Success); Navigate(Screen1), Notify(\"Update failed!\", "
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Screen3",
+                "type": "Screen3.IconAccept1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrOperandExpected",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charOffset": 151,
+                  "snippet": {
+                    "text": "Set(varSubmitResult, SubmitForm(EditForm1));\r\nIf(varSubmitResult, Notify(\"Update successfully!\", Success); Navigate(Screen1), Notify(\"Update failed!\", "
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Screen3",
+                "type": "Screen3.IconAccept1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ParenClose",
+              "Eof"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charOffset": 151,
+                  "snippet": {
+                    "text": "Set(varSubmitResult, SubmitForm(EditForm1));\r\nIf(varSubmitResult, Notify(\"Update successfully!\", Success); Navigate(Screen1), Notify(\"Update failed!\", "
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Screen3",
+                "type": "Screen3.IconAccept1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "ParenClose",
+              "Eof"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrExpectedFound-Ex-Fnd",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charOffset": 151,
+                  "snippet": {
+                    "text": "Set(varSubmitResult, SubmitForm(EditForm1));\r\nIf(varSubmitResult, Notify(\"Update successfully!\", Success); Navigate(Screen1), Notify(\"Update failed!\", "
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Screen3",
+                "type": "Screen3.IconAccept1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Number",
+              "Error"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrBadType-ExpectedType-ProvidedType",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.IconAccept1.OnSelect",
+                  "relativeAddress": 0
+                },
+                "region": {
+                  "charLength": 1,
+                  "charOffset": 132,
+                  "snippet": {
+                    "text": "Set(varSubmitResult, SubmitForm(EditForm1));\r\nIf(varSubmitResult, Notify(\"Update successfully!\", Success); Navigate(Screen1), Notify(\"Update failed!\", "
+                  }
+                }
+              },
+              "properties": {
+                "member": "OnSelect",
+                "module": "Screen3",
+                "type": "Screen3.IconAccept1"
+              }
+            }
+          ],
+          "message": {
+            "arguments": [
+              "Notify"
+            ],
+            "id": "issue"
+          },
+          "properties": {
+            "level": "High"
+          },
+          "ruleId": "app-ErrInvalidArgs-Func",
+          "ruleIndex": 4
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogWelcome.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogWelcome.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogWelcome"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogInstructions.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogInstructions.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogInstructions"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdInactiveRect"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdInactiveRect.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdInactiveRect"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogUpdates.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogUpdates.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogUpdates"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.tglDialogResponseTrigger.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.tglDialogResponseTrigger"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInput365Users.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInput365Users.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInput365Users"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputArrayText.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputArrayText.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputArrayText"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputSlider.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputSlider.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputSlider"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputRating.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputRating.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputRating"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputText.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdInputText.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdInputText"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdGalButtons.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdGalButtons"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdLblLink.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.mdGalPopup.mdLblLink.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.mdGalPopup.mdLblLink"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogSupport.HtmlText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.cmpModalDialogSupport.HtmlText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "HtmlText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog.cmpModalDialogSupport"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-HtmlShouldNotBeInteractive",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_AddNew.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_AddNew.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.icn_AddNew"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_AddNew.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_AddNew.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.icn_AddNew"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_Refresh.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_Refresh.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.icn_Refresh"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_Refresh.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.icn_Refresh.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.icn_Refresh"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.graList_ApproveList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.graList_ApproveList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Rectangle3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Rectangle3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.graList_ApproveList.Rectangle3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Rectangle3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Rectangle3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.graList_ApproveList.Rectangle3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Icon3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Icon3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.graList_ApproveList.Icon3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Icon3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_MyExpenses.graList_ApproveList.Icon3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_MyExpenses",
+                "type": "scr_MyExpenses.graList_ApproveList.Icon3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.icn_BackMyExpenses.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.icn_BackMyExpenses.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.icn_BackMyExpenses"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.icn_BackMyExpenses.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.icn_BackMyExpenses.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_Summary",
+                "type": "scr_Summary.icn_BackMyExpenses"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.icn_GoUploadPage.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.icn_GoUploadPage.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.icn_GoUploadPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.icn_GoUploadPage.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.icn_GoUploadPage.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "scr_Summary",
+                "type": "scr_Summary.icn_GoUploadPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Expense Name_DataCard4.DataCardValue9.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Expense Name_DataCard4.DataCardValue9.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Expense Name_DataCard4.DataCardValue9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Expense Total Amount_DataCard2.DataCardValue10.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Expense Total Amount_DataCard2.DataCardValue10.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Expense Total Amount_DataCard2.DataCardValue10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Report to_DataCard1.DataCardValue6.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Report to_DataCard1.DataCardValue6.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Report to_DataCard1.DataCardValue6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Expense Description_DataCard1.DataCardValue4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Expense Description_DataCard1.DataCardValue4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Expense Description_DataCard1.DataCardValue4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Approval status_DataCard1.DataCardValue5.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Approval status_DataCard1.DataCardValue5.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Approval status_DataCard1.DataCardValue5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Report To Email_DataCard1.DataCardValue1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Report To Email_DataCard1.DataCardValue1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Report To Email_DataCard1.DataCardValue1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Finance Controller_DataCard1.DataCardValue2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Finance Controller_DataCard1.DataCardValue2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Finance Controller_DataCard1.DataCardValue2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Owner Email_DataCard1.DataCardValue3.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "scr_Summary.form_ExpensesForm.Owner Email_DataCard1.DataCardValue3.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "scr_Summary",
+                "type": "scr_Summary.form_ExpensesForm.Owner Email_DataCard1.DataCardValue3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSummaryPage.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSummaryPage.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.lab_ToSummaryPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSummaryPage.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSummaryPage.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.lab_ToSummaryPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSubmitPage.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSubmitPage.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.lab_ToSubmitPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSubmitPage.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.lab_ToSubmitPage.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.lab_ToSubmitPage"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.garList_ExpenseItemList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.garList_ExpenseItemList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.garList_ExpenseItemList.Icon1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.garList_ExpenseItemList.Icon1_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.garList_ExpenseItemList.Icon1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.garList_ExpenseItemList.Icon1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.garList_ExpenseItemList.Icon1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Transaction Date_DataCard2.DateValue4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Transaction Date_DataCard2.DateValue4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.form_ItemInput.Transaction Date_DataCard2.DateValue4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Amount_DataCard2.DataCardValue26.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Amount_DataCard2.DataCardValue26.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.form_ItemInput.Amount_DataCard2.DataCardValue26"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Invoice Type_DataCard2.DataCardValue23.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Invoice Type_DataCard2.DataCardValue23.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.form_ItemInput.Invoice Type_DataCard2.DataCardValue23"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Expense Name_DataCard6.DataCardValue40.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Expense Name_DataCard6.DataCardValue40.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.form_ItemInput.Expense Name_DataCard6.DataCardValue40"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Expense Item Name_DataCard1.DataCardValue11.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Expense Item Name_DataCard1.DataCardValue11.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.form_ItemInput.Expense Item Name_DataCard1.DataCardValue11"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Attachment Link_DataCard1.DataCardValue7.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Upload.form_ItemInput.Attachment Link_DataCard1.DataCardValue7.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Upload",
+                "type": "Scr_Upload.form_ItemInput.Attachment Link_DataCard1.DataCardValue7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.icn_ToUpload.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.icn_ToUpload.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.icn_ToUpload"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.icn_ToUpload.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.icn_ToUpload.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.icn_ToUpload"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.garList_SubmitItemList.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.garList_SubmitItemList.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.garList_SubmitItemList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.garList_SubmitItemList.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.garList_SubmitItemList.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.garList_SubmitItemList"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.PenInput1"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.PenInput1",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.PenInput1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-AlternativeInputNeeded",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.PenInput1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.PenInput1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.PenInput1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.PenInput1.ShowControls"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.PenInput1.ShowControls",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "ShowControls",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.PenInput1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-HelpfulControlSettingNeeded",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.tglDialogResponseTrigger_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.tglDialogResponseTrigger_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.tglDialogResponseTrigger_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen1"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Screen1",
+                "type": "Screen1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-ReadableScreenNameNeeded",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen1.Gallery1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1.Gallery1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen1",
+                "type": "Screen1.Gallery1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen1.Gallery1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen1.Gallery1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "Screen1",
+                "type": "Screen1.Gallery1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 7
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "Screen3",
+                "type": "Screen3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Low"
+          },
+          "ruleId": "acc-ReadableScreenNameNeeded",
+          "ruleIndex": 10
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Name_DataCard1.DataCardValue8.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Name_DataCard1.DataCardValue8.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Expense Name_DataCard1.DataCardValue8"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Period_DataCard1.DateValue1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Period_DataCard1.DateValue1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Expense Period_DataCard1.DateValue1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Period_DataCard1.HourValue1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Period_DataCard1.HourValue1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Expense Period_DataCard1.HourValue1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Period_DataCard1.MinuteValue1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Period_DataCard1.MinuteValue1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Expense Period_DataCard1.MinuteValue1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Total Amount_DataCard1.DataCardValue13.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Total Amount_DataCard1.DataCardValue13.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Expense Total Amount_DataCard1.DataCardValue13"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Description_DataCard2.DataCardValue14.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Expense Description_DataCard2.DataCardValue14.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Expense Description_DataCard2.DataCardValue14"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Approval status_DataCard2.DataCardValue15.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Approval status_DataCard2.DataCardValue15.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Approval status_DataCard2.DataCardValue15"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Finance Controller_DataCard2.DataCardValue16.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Finance Controller_DataCard2.DataCardValue16.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Finance Controller_DataCard2.DataCardValue16"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Screen3.EditForm1.Report to_DataCard3.DataCardValue17.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Screen3.EditForm1.Report to_DataCard3.DataCardValue17.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "Screen3",
+                "type": "Screen3.EditForm1.Report to_DataCard3.DataCardValue17"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 6
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varYesNo"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varYesNo",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varYesNo",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varText",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varTextArray"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varTextArray",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varTextArray",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varO365"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varO365",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varO365",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varRating"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varRating",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varRating",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varSlider"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varSlider",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varSlider",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varSubmitResult"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varSubmitResult",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varSubmitResult",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varText"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varText",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varText",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varTextArray"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varTextArray",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varTextArray",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varO365"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varO365",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varO365",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varRating"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varRating",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varRating",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cmpModalDialog.varSlider"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "cmpModalDialog.varSlider",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varSlider",
+                "module": "cmpModalDialog",
+                "type": "cmpModalDialog"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 11
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "Scr_Submit.cmpModalDialog_1.Version"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "Scr_Submit.cmpModalDialog_1.Version",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Version",
+                "module": "Scr_Submit",
+                "type": "Scr_Submit.cmpModalDialog_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 12
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "PowerApps app checker",
+          "name": "PowerApps app checker",
+          "rules": [
+            {
+              "id": "app-WarnComponentUsingCollection",
+              "messageStrings": {
+                "issue": {
+                  "text": "Warning: Formula within canvas component manipulates collection \"{0}\"."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Within a canvas component, avoid using functions that manipulate a collection, such as Collect(), ClearCollect(), and Remove(), that could cause a conflict with collections in the app."
+                ],
+                "level": "Medium",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrOperandExpected",
+              "messageStrings": {
+                "issue": {
+                  "text": "Expected an operand. The formula or expression expects a valid operand. For example, you can add the operand '2' to the expression ' 1 +_' so that the result is '3'. Or, you can add the operand \"there\" to the expression '\"Hi \"& _ ' so that the result is 'Hi there'."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Supply an operand value that will complete the expression. Ensure that the operand's type (text, number, date, or true/false) fits the expression. Match numbers with numbers, text with text, and so on. For example, '1 + \"Hi\"' isn't valid, but '1 + 2' is valid."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrExpectedFound-Ex-Fnd",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unexpected characters. The formula contains '{0}' where '{1}' is expected."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove or replace the unexpected characters with an expected character."
+                ],
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrBadType-ExpectedType-ProvidedType",
+              "messageStrings": {
+                "issue": {
+                  "text": "Invalid argument type ({1}). Expecting a {0} value instead."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "app-ErrInvalidArgs-Func",
+              "messageStrings": {
+                "issue": {
+                  "text": "The function '{0}' has some invalid arguments."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "level": "High",
+                "primaryCategory": "formula",
+                "whyFix": ""
+              }
+            },
+            {
+              "id": "acc-HtmlShouldNotBeInteractive",
+              "messageStrings": {
+                "issue": {
+                  "text": "If this HTML contains interactive elements, consider using another method, or remove the HTML from this element."
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use another method instead of HTML, or remove the HTML from this element."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "Your app won't work correctly and will not be accessible if you place interactive HTML elements."
+              }
+            },
+            {
+              "id": "acc-AccessibleLabelNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing accessible label"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Edit the accessible label property to describe the item."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "If there's no accessible text, people who can’t see the screen won't understand what’s in images and controls."
+              }
+            },
+            {
+              "id": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing tab stop"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Set TabIndex to 0 or greater to ensure that interactive elements have a tab stop."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who use the keyboard with your app will not be able to access this element without a tab stop."
+              }
+            },
+            {
+              "id": "acc-AlternativeInputNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Add another input method"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Add a text input in addition to the pen control for an accessible experience."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "Some users can't use a pen and require another way to input information. Example: Typing in a signature."
+              }
+            },
+            {
+              "id": "acc-HelpfulControlSettingNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Missing helpful control settings"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Select the warning and set the item property to true to enable control setting."
+                ],
+                "level": "Medium",
+                "primaryCategory": "accessibility",
+                "whyFix": "Changing this property setting will give the user better information about the function of the controls in your app."
+              }
+            },
+            {
+              "id": "acc-ReadableScreenNameNeeded",
+              "messageStrings": {
+                "issue": {
+                  "text": "Revise screen name"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Give the screen  a title that describes what's on the screen or what it's used for."
+                ],
+                "level": "Low",
+                "primaryCategory": "accessibility",
+                "whyFix": "People who are blind, have low vision, or a reading disability rely on screen titles to navigate using the screen reader. "
+              }
+            },
+            {
+              "id": "app-UnusedVariables",
+              "messageStrings": {
+                "issue": {
+                  "text": "Unused variable"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Remove the unused variable."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "This variable is declared but is not referenced by any control, so it is not needed."
+              }
+            },
+            {
+              "id": "app-InefficientDelayLoading",
+              "messageStrings": {
+                "issue": {
+                  "text": "Inefficient delay loading"
+                }
+              },
+              "properties": {
+                "componentType": "app",
+                "howToFix": [
+                  "Use variables, collections, and navigation context to share state across screens instead."
+                ],
+                "level": "Medium",
+                "primaryCategory": "performance",
+                "whyFix": "Controls that reference controls on other screens can slow down app loading and navigation. Doing this may force the app to load the other screens immediately, rather than waiting until the user navigates to that screen."
+              }
+            }
+          ],
+          "version": "1.301"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}
